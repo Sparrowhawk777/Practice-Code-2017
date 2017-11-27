@@ -28,6 +28,8 @@ public class Drive extends Command
 	@Override
 	protected void execute()
 	{
+		Robot.drivetrain.DriveLR(0.5,0.5);
+		Robot.drivetrain.obj.arcadeDrive(0.5,0.5);
 		// Use methods from your drivetrain class to make the robot wheels spin
 		// HINT use "Robot.drivetrain" to access the drivetrain class
 		

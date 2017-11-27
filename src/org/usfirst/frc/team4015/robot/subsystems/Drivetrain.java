@@ -13,6 +13,9 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Drivetrain extends Subsystem
 {	
+	Talon talonR;
+	Talon talonL;
+	public RobotDrive obj;
 	// Declare Talons for driving here
 	// Declare "RobotDrive" class here (please read documentation on these classes)
 	
@@ -20,9 +23,19 @@ public class Drivetrain extends Subsystem
 	
 	public Drivetrain()
 	{
+		talonR = new Talon(1);
+		talonL = new Talon(0);
+		obj = new RobotDrive(talonL, talonR);
 		// initialize Talons here
 		// Initialize drivetrain object using RobotDrive constructor and Talons
 	}
+	public void DriveLR(double speedL, double speedR) {
+		talonR.set(speedR);
+		talonL.set(speedL);
+	}
+//	public void arcadeDrive(double moveValue, double rotateValue) {
+//		talonR.set();
+//	}
 	
 	// write methods to move the robot wheels using the RobotDrive object
 	// make sure to include a method to stop the robot :)
@@ -34,4 +47,7 @@ public class Drivetrain extends Subsystem
 		// Set the default command for a subsystem here.
 		setDefaultCommand(new Drive());
 	}
+	
+
 }
+
